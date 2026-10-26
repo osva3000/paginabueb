@@ -1,0 +1,140 @@
+/* ==========================================================
+   VARIABLES: cambia aqui fuentes y colores de todo el sitio
+   ========================================================== */
+:root {
+    --fuente-titulo: "Bungee", sans-serif;
+    --fuente-texto: "Space Grotesk", sans-serif;
+
+    --color-fuego: #e63946;
+    --color-brasa: #ffb703;
+    --color-carbon: #16100f;
+    --color-panel: #241a18;
+    --color-texto: #f5ece6;
+
+    --altura-nav: 72px;
+}
+
+/* ---------- Base ---------- */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: calc(var(--altura-nav) + 1rem);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+}
+
+body {
+    font-family: var(--fuente-texto);
+    background: var(--color-carbon);
+    color: var(--color-texto);
+    padding-top: var(--altura-nav);
+}
+
+h1, h2, h3, h4, .navbar-brand, .modal-title {
+    font-family: var(--fuente-titulo);
+    font-weight: 400;
+    letter-spacing: 0.02em;
+}
+
+a { color: var(--color-brasa); }
+a:hover { color: #fff; }
+
+:focus-visible {
+    outline: 3px solid var(--color-brasa);
+    outline-offset: 2px;
+}
+
+/* ---------- Navbar con imagen de fondo ---------- */
+.navbar-imagen {
+    min-height: var(--altura-nav);
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+        url("../Recursos/Imagenes/fondo-navbar.jpg");
+    background-size: 100% 100%, 240px auto;
+    background-repeat: no-repeat, repeat;
+    border-bottom: 3px solid var(--color-fuego);
+}
+
+.navbar-imagen .navbar-brand { font-size: 1.4rem; color: #fff; }
+.navbar-imagen .nav-link { color: #fff; font-weight: 500; }
+.navbar-imagen .nav-link:hover,
+.navbar-imagen .nav-link.active { color: var(--color-brasa); }
+
+/* ---------- Secciones ---------- */
+.seccion { padding: 4.5rem 0; }
+.seccion-alterna { background: var(--color-panel); }
+
+.titulo-seccion {
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    padding-left: 1rem;
+    border-left: 6px solid var(--color-fuego);
+    margin-bottom: 2.5rem;
+}
+
+.foto-perfil {
+    max-width: 320px;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    border-left: 5px solid var(--color-brasa);
+    border-right: 5px solid var(--color-brasa);
+}
+
+.titulo-principal {
+    font-size: clamp(2.4rem, 6vw, 4rem);
+    color: var(--color-fuego);
+}
+
+.btn-fuego {
+    --bs-btn-bg: var(--color-fuego);
+    --bs-btn-border-color: var(--color-fuego);
+    --bs-btn-color: #fff;
+    --bs-btn-hover-bg: #c92a37;
+    --bs-btn-hover-border-color: #c92a37;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-active-bg: #a8222d;
+    --bs-btn-active-border-color: #a8222d;
+}
+
+/* ---------- Carrusel de hobbies ---------- */
+.slide-contenido {
+    min-height: 340px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2.5rem 4.5rem;
+    color: #fff;
+}
+
+.slide-contenido .bi { font-size: 3.5rem; color: var(--color-brasa); }
+
+/* Para usar una foto en vez del degradado:
+   background-image: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url("../Recursos/Imagenes/tu-foto.jpg");
+   background-size: cover; background-position: center; */
+.slide-futbol { background-image: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url("../Recursos/Imagenes/messi meme.jpeg"); }
+.slide-beats  { background-image: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url("../Recursos/Imagenes/fl studio.jpeg") }
+.slide-sintes {background-image: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url("../Recursos/Imagenes/amigays.jpeg");
+                background-size: cover; 
+                background-position: center 40% ; 
+                background-repeat: no-repeat;
+}
+
+/* ---------- Cards de proyectos ---------- */
+.card {
+    --bs-card-bg: var(--color-panel);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.card .bi { font-size: 2rem; color: var(--color-brasa); }
+
+/* ---------- Footer ---------- */
+.pie {
+    background: #0d0908;
+    border-top: 3px solid var(--color-fuego);
+    padding: 2rem 0;
+}
+
+.pie a { font-size: 1.5rem; }
